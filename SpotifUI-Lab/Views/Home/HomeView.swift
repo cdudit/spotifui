@@ -80,18 +80,16 @@ struct HomeView: View {
                             Button {
                                 print("\(song.name)")
                             } label: {
-                                ZStack {
-                                    Color(UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 0.5))
-                                    HStack {
-                                        Image(song.picturePath)
-                                            .resizable()
-                                            .scaledToFill()
-                                            .frame(width: 55, height: 55)
-                                        Text(song.name)
-                                            .font(Fonts.footnote)
-                                        Spacer()
-                                    }
+                                HStack {
+                                    Image(song.picturePath)
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 55, height: 55)
+                                    Text(song.name)
+                                        .font(Fonts.footnote)
+                                    Spacer()
                                 }
+                                    .background(Color(UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 0.5)))
                                     .cornerRadius(3)
                                     .shadow(radius: 12)
                             }
