@@ -72,7 +72,7 @@ struct HomeView: View {
                             Image(systemName: "gearshape")
                                 .font(.title3)
                         }
-                    }.padding(.bottom, 10)
+                    }.padding(.vertical, 10)
                     
                     // MARK: LastListening
                     LazyVGrid(columns: columns) {
@@ -86,7 +86,8 @@ struct HomeView: View {
                                         .scaledToFill()
                                         .frame(width: 55, height: 55)
                                     Text(song.name)
-                                        .font(Fonts.footnote)
+                                        .font(Fonts.footnoteBold)
+                                        .lineLimit(2)
                                     Spacer()
                                 }
                                     .background(Color(UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 0.5)))
