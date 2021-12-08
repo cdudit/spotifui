@@ -12,6 +12,21 @@ struct RecentlyPlayed: Hashable {
     let picturePath: String
 }
 
+struct HomeCard: Hashable {
+    let name: String
+    let picturePath: String
+    let type: String
+    let author: String
+}
+
+let trends: [HomeCard] = [
+    HomeCard(name: "Random Access Memories", picturePath: "RAM", type: "Album", author: "Daft Punk"),
+    HomeCard(name: "test", picturePath: "RAM", type: "Album", author: "test"),
+    HomeCard(name: "test1", picturePath: "RAM", type: "Album", author: "test1"),
+    HomeCard(name: "test2", picturePath: "RAM", type: "Album", author: "test2"),
+    HomeCard(name: "test3", picturePath: "RAM", type: "Album", author: "test3")
+]
+
 let recentlyListened: [RecentlyPlayed] = [
     RecentlyPlayed(name: "Popcorn", picturePath: "popcorn"),
     RecentlyPlayed(name: "JEFE", picturePath: "jefe"),
@@ -29,9 +44,6 @@ let columns = [
 struct HomeView: View {
     var body: some View {
         ZStack {
-            Color(red: 0.2, green: 0.2, blue: 0.2)
-                .edgesIgnoringSafeArea(.all)
-            
             ScrollView {
                 VStack(alignment: .leading, spacing: 10) {
                     // MARK: Toolbar
@@ -62,19 +74,21 @@ struct HomeView: View {
                         }
                     }.padding(.bottom, 10)
                     
-                    // MARK: Lastlistening
+                    // MARK: LastListening
                     LazyVGrid(columns: columns) {
-                        ForEach(recentlyListened, id: \.self) {song in
-                            HStack {
-                                Image(song.picturePath)
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 55, height: 55)
-                                Text(song.name)
-                                    .font(Fonts.footnote)
-                                Spacer()
+                        ForEach(recentlyListened, id: \.self) { song in
+                            ZStack {
+                                Color(UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 0.5))
+                                HStack {
+                                    Image(song.picturePath)
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 55, height: 55)
+                                    Text(song.name)
+                                        .font(Fonts.footnote)
+                                    Spacer()
+                                }
                             }
-                                .background(Color.gray.opacity(0.2))
                                 .cornerRadius(3)
                                 .shadow(radius: 12)
                         }
@@ -86,27 +100,33 @@ struct HomeView: View {
                             .font(Fonts.headline)
                         
                         ScrollView(.horizontal, showsIndicators: false) {
-                            VStack(alignment: .leading) {
-                                Image("RAM")
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(height: 150)
-                                
-                                VStack(alignment: .leading, spacing: 5) {
-                                    Text("Random Access Memories")
-                                        .font(Fonts.subhead)
-                                        .lineLimit(1)
-                                    Text("Album • Daft Punk")
-                                        .font(Fonts.caption1)
-                                        .foregroundColor(Color.gray)
-                                        .lineLimit(1)
+                            HStack(spacing: 15) {
+                                ForEach(trends, id: \.self) { trend in
+                                    VStack(alignment: .leading) {
+                                        Image(trend.picturePath)
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(height: 150)
+                                        
+                                        VStack(alignment: .leading, spacing: 5) {
+                                            Text(trend.name)
+                                                .font(Fonts.subhead)
+                                                .lineLimit(1)
+                                            Text("\(trend.type) • \(trend.author)")
+                                                .font(Fonts.caption1)
+                                                .foregroundColor(Color.gray)
+                                                .lineLimit(1)
+                                        }
+                                    }.frame(width: 150)
                                 }
-                            }.frame(width: 150)
+                            }
                         }
                     }.padding(.top, 20)
                 }.padding()
             }
-        }
+        }.background(
+            LinearGradient(gradient: Gradient(colors: [.blue, .black, .black]), startPoint: .topLeading, endPoint: .center)
+        )
     }
 }
 
