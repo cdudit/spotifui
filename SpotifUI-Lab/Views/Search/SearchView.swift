@@ -10,26 +10,41 @@ import SwiftUI
 struct FavoriteGenre: Hashable {
     let libelle: String
     let picturePath: String
-    let color: Color
 }
 
-let colors: [Color] = [
-    Color(UIColor(red: 0.23, green: 0.12, blue: 0.92, alpha: 0.8)),
-    Color(UIColor(red: 0.85, green: 0.22, blue: 0.23, alpha: 0.9)),
-    Color(UIColor(red: 0.69, green: 0.8, blue: 0.69, alpha: 0.8)),
-    Color(UIColor(red: 0.87, green: 0.29, blue: 0.64, alpha: 0.8))
-]
+extension UIImage {
+    var averageColor: UIColor? {
+        guard let inputImage = CIImage(image: self) else { return nil }
+        let extentVector = CIVector(x: inputImage.extent.origin.x, y: inputImage.extent.origin.y, z: inputImage.extent.size.width, w: inputImage.extent.size.height)
+
+        guard let filter = CIFilter(name: "CIAreaAverage", parameters: [kCIInputImageKey: inputImage, kCIInputExtentKey: extentVector]) else { return nil }
+        guard let outputImage = filter.outputImage else { return nil }
+
+        var bitmap = [UInt8](repeating: 0, count: 4)
+        let context = CIContext(options: [.workingColorSpace: kCFNull])
+        context.render(outputImage, toBitmap: &bitmap, rowBytes: 4, bounds: CGRect(x: 0, y: 0, width: 1, height: 1), format: .RGBA8, colorSpace: nil)
+
+        return UIColor(red: CGFloat(bitmap[0]) / 255, green: CGFloat(bitmap[1]) / 255, blue: CGFloat(bitmap[2]) / 255, alpha: CGFloat(bitmap[3]) / 255)
+    }
+}
 
 let favoritesGenres: [FavoriteGenre] = [
-    FavoriteGenre(libelle: "Variété française", picturePath: "popcorn", color: colors[0]),
-    FavoriteGenre(libelle: "Hip-Hop", picturePath: "jefe", color: colors[1]),
-    FavoriteGenre(libelle: "Pop", picturePath: "likes", color: colors[2]),
-    FavoriteGenre(libelle: "Dance/Electro", picturePath: "ennaboost", color: colors[3])
+    FavoriteGenre(libelle: "Variété française", picturePath: "popcorn"),
+    FavoriteGenre(libelle: "Hip-Hop", picturePath: "jefe"),
+    FavoriteGenre(libelle: "Pop", picturePath: "likes"),
+    FavoriteGenre(libelle: "Dance/Electro", picturePath: "ennaboost")
+]
+
+let browseAll: [FavoriteGenre] = [
+    FavoriteGenre(libelle: "Rétrospective", picturePath: "popcorn"),
+    FavoriteGenre(libelle: "Classements", picturePath: "jefe"),
+    FavoriteGenre(libelle: "Podcasts", picturePath: "likes"),
+    FavoriteGenre(libelle: "Nouveautés", picturePath: "ennaboost")
 ]
 
 struct SearchView: View {
     let columns = [
-        GridItem(.flexible()),
+        GridItem(.flexible(), spacing: 15),
         GridItem(.flexible())
     ]
     
@@ -45,7 +60,7 @@ struct SearchView: View {
                         Image(systemName: "camera")
                             .font(.title3)
                     }
-                }
+                }.padding(.top, 10)
                 
                 Button {
                     print("Search")
@@ -72,7 +87,7 @@ struct SearchView: View {
                     Spacer()
                 }
                 
-                LazyVGrid(columns: columns) {
+                LazyVGrid(columns: columns, spacing: 15) {
                     ForEach(favoritesGenres, id: \.self) { genre in
                         Button {
                             print("ici")
@@ -82,7 +97,7 @@ struct SearchView: View {
                                     .lineLimit(3)
                                     .padding(.leading, 10)
                                     .padding(.top, 20)
-                                    .font(Fonts.headline2)
+                                    .font(Fonts.headline3)
                                 
                                 HStack(alignment: .bottom) {
                                     Spacer()
@@ -96,12 +111,47 @@ struct SearchView: View {
                             }
                         }
                             .frame(height: 120)
-                            .background(genre.color)
-                            .cornerRadius(3)
+                            .background(Color(uiColor: UIImage(named: genre.picturePath)?.averageColor ?? UIColor.systemGray))
+                            .cornerRadius(4)
+                    }
+                }
+                
+                HStack {
+                    Text("Parcourir tout")
+                        .font(Fonts.body)
+                    Spacer()
+                }
+                
+                LazyVGrid(columns: columns, spacing: 15) {
+                    ForEach(browseAll, id: \.self) { genre in
+                        Button {
+                            print("ici")
+                        } label: {
+                            VStack(alignment: .leading) {
+                                Text(genre.libelle)
+                                    .lineLimit(3)
+                                    .padding(.leading, 10)
+                                    .padding(.top, 20)
+                                    .font(Fonts.headline3)
+                                
+                                HStack(alignment: .bottom) {
+                                    Spacer()
+                                    Image(genre.picturePath)
+                                        .resizable()
+                                        .scaledToFill()
+                                        .frame(width: 80)
+                                        .rotationEffect(Angle(degrees: 30))
+                                        .padding(.trailing, -15)
+                                }
+                            }
+                        }
+                            .frame(height: 120)
+                            .background(Color(uiColor: UIImage(named: genre.picturePath)?.averageColor ?? UIColor.systemGray))
+                            .cornerRadius(4)
                     }
                 }
             }
-        }
+        }.padding()
     }
 }
 

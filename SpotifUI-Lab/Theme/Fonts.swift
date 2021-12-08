@@ -23,6 +23,7 @@ struct Fonts {
     static var largeTitle: Font { spotifyBlack(size: 35) }
     static var headline: Font { spotifyBold(size: 25) }
     static var headline2: Font { spotifyBold(size: 22) }
+    static var headline3: Font { spotifyBold(size: 20) }
     static var body: Font { spotifyBook(size: 17) }
     static var subhead: Font { spotifyBold(size: 15) }
     static var footnote: Font { spotifyBook(size: 13) }
