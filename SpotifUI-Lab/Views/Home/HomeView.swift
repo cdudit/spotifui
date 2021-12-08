@@ -21,10 +21,10 @@ struct HomeCard: Hashable {
 
 let trends: [HomeCard] = [
     HomeCard(name: "Random Access Memories", picturePath: "RAM", type: "Album", author: "Daft Punk"),
-    HomeCard(name: "test", picturePath: "RAM", type: "Album", author: "test"),
-    HomeCard(name: "test1", picturePath: "RAM", type: "Album", author: "test1"),
-    HomeCard(name: "test2", picturePath: "RAM", type: "Album", author: "test2"),
-    HomeCard(name: "test3", picturePath: "RAM", type: "Album", author: "test3")
+    HomeCard(name: "JEFE", picturePath: "jefe", type: "Album", author: "Ninho"),
+    HomeCard(name: "Enna Boost", picturePath: "ennaboost", type: "Album", author: "PLK"),
+    HomeCard(name: "Réelle Vie 3.0", picturePath: "rellevie", type: "Album", author: "Maes"),
+    HomeCard(name: "La fête est finie", picturePath: "lafeteestfinie", type: "Album", author: "Orelsan")
 ]
 
 let recentlyListened: [RecentlyPlayed] = [
@@ -77,20 +77,24 @@ struct HomeView: View {
                     // MARK: LastListening
                     LazyVGrid(columns: columns) {
                         ForEach(recentlyListened, id: \.self) { song in
-                            ZStack {
-                                Color(UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 0.5))
-                                HStack {
-                                    Image(song.picturePath)
-                                        .resizable()
-                                        .scaledToFill()
-                                        .frame(width: 55, height: 55)
-                                    Text(song.name)
-                                        .font(Fonts.footnote)
-                                    Spacer()
+                            Button {
+                                print("\(song.name)")
+                            } label: {
+                                ZStack {
+                                    Color(UIColor(red: 0.3, green: 0.3, blue: 0.3, alpha: 0.5))
+                                    HStack {
+                                        Image(song.picturePath)
+                                            .resizable()
+                                            .scaledToFill()
+                                            .frame(width: 55, height: 55)
+                                        Text(song.name)
+                                            .font(Fonts.footnote)
+                                        Spacer()
+                                    }
                                 }
+                                    .cornerRadius(3)
+                                    .shadow(radius: 12)
                             }
-                                .cornerRadius(3)
-                                .shadow(radius: 12)
                         }
                     }
                     
@@ -102,22 +106,26 @@ struct HomeView: View {
                         ScrollView(.horizontal, showsIndicators: false) {
                             HStack(spacing: 15) {
                                 ForEach(trends, id: \.self) { trend in
-                                    VStack(alignment: .leading) {
-                                        Image(trend.picturePath)
-                                            .resizable()
-                                            .scaledToFill()
-                                            .frame(height: 150)
-                                        
-                                        VStack(alignment: .leading, spacing: 5) {
-                                            Text(trend.name)
-                                                .font(Fonts.subhead)
-                                                .lineLimit(1)
-                                            Text("\(trend.type) • \(trend.author)")
-                                                .font(Fonts.caption1)
-                                                .foregroundColor(Color.gray)
-                                                .lineLimit(1)
-                                        }
-                                    }.frame(width: 150)
+                                    Button {
+                                        print("\(trend.name)")
+                                    } label: {
+                                        VStack(alignment: .leading) {
+                                            Image(trend.picturePath)
+                                                .resizable()
+                                                .scaledToFill()
+                                                .frame(height: 150)
+                                            
+                                            VStack(alignment: .leading, spacing: 5) {
+                                                Text(trend.name)
+                                                    .font(Fonts.subhead)
+                                                    .lineLimit(1)
+                                                Text("\(trend.type) • \(trend.author)")
+                                                    .font(Fonts.caption1)
+                                                    .foregroundColor(Color.gray)
+                                                    .lineLimit(1)
+                                            }
+                                        }.frame(width: 150)
+                                    }
                                 }
                             }
                         }
