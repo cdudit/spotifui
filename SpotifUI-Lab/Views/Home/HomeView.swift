@@ -7,28 +7,33 @@
 
 import SwiftUI
 
+struct RecentlyPlayed: Hashable {
+    let name: String
+    let picturePath: String
+}
+
+let recentlyListened: [RecentlyPlayed] = [
+    RecentlyPlayed(name: "Popcorn", picturePath: "popcorn"),
+    RecentlyPlayed(name: "JEFE", picturePath: "jefe"),
+    RecentlyPlayed(name: "Titres likés", picturePath: "likes"),
+    RecentlyPlayed(name: "Enna Boost", picturePath: "ennaboost"),
+    RecentlyPlayed(name: "Underscore_", picturePath: "underscore"),
+    RecentlyPlayed(name: "En boucle", picturePath: "enboucle")
+]
+
+let columns = [
+    GridItem(.flexible()),
+    GridItem(.flexible())
+]
+
 struct HomeView: View {
     var body: some View {
-        let columns = [
-            GridItem(.flexible()),
-            GridItem(.flexible())
-        ]
-        
-        let recentlyListened: [[String]] = [
-            ["popcorn", "Popcorn"],
-            ["jefe", "JEFE"],
-            ["likes", "Titres likés"],
-            ["ennaboost", "Enna Boost"],
-            ["underscore", "Underscore_"],
-            ["enboucle", "En boucle"]
-        ]
-
         ZStack {
             Color(red: 0.2, green: 0.2, blue: 0.2)
                 .edgesIgnoringSafeArea(.all)
             
             ScrollView {
-                VStack(alignment: .leading) {
+                VStack(alignment: .leading, spacing: 10) {
                     // MARK: Toolbar
                     HStack(spacing: 23) {
                         Text("Bonjour").font(Fonts.headline)
@@ -61,17 +66,17 @@ struct HomeView: View {
                     LazyVGrid(columns: columns) {
                         ForEach(recentlyListened, id: \.self) {song in
                             HStack {
-                                Image(song[0])
+                                Image(song.picturePath)
                                     .resizable()
                                     .scaledToFill()
                                     .frame(width: 55, height: 55)
-                                Text(song[1])
+                                Text(song.name)
                                     .font(Fonts.footnote)
-                                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                                Spacer()
                             }
-                            .background(Color.gray.opacity(0.2))
+                                .background(Color.gray.opacity(0.2))
                                 .cornerRadius(3)
-                                .frame(minWidth: 0, maxWidth: .infinity)
+                                .shadow(radius: 12)
                         }
                     }
                     
@@ -98,7 +103,7 @@ struct HomeView: View {
                                 }
                             }.frame(width: 150)
                         }
-                    }
+                    }.padding(.top, 20)
                 }.padding()
             }
         }
