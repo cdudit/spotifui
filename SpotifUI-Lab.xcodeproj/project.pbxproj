@@ -8,17 +8,38 @@
 
 /* Begin PBXBuildFile section */
 		159979E3274E571600125B2D /* SpotifUI_LabApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159979E2274E571600125B2D /* SpotifUI_LabApp.swift */; };
-		159979E5274E571600125B2D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159979E4274E571600125B2D /* ContentView.swift */; };
 		159979E7274E571A00125B2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 159979E6274E571A00125B2D /* Assets.xcassets */; };
 		159979EA274E571A00125B2D /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 159979E9274E571A00125B2D /* Preview Assets.xcassets */; };
+		159979F6274E594900125B2D /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159979F5274E594900125B2D /* TabBarView.swift */; };
+		159979F8274E5AEC00125B2D /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159979F7274E5AEC00125B2D /* HomeView.swift */; };
+		159979FA274E5B0100125B2D /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159979F9274E5B0100125B2D /* SearchView.swift */; };
+		159979FC274E5B1800125B2D /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159979FB274E5B1800125B2D /* LibraryView.swift */; };
+		159979FE274E5B3400125B2D /* PremiumView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 159979FD274E5B3400125B2D /* PremiumView.swift */; };
+		15997A03274E8BC700125B2D /* CircularSpUIv3T-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 159979FF274E8BC600125B2D /* CircularSpUIv3T-Light.ttf */; };
+		15997A04274E8BC700125B2D /* CircularSpUIv3T-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15997A00274E8BC600125B2D /* CircularSpUIv3T-Black.ttf */; };
+		15997A05274E8BC700125B2D /* CircularSpUIv3T-Book.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15997A01274E8BC600125B2D /* CircularSpUIv3T-Book.ttf */; };
+		15997A06274E8BC700125B2D /* CircularSpUIv3T-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15997A02274E8BC600125B2D /* CircularSpUIv3T-Bold.ttf */; };
+		15997A0C274E8F3100125B2D /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15997A0B274E8F3100125B2D /* Fonts.swift */; };
+		15997A0F274EA34F00125B2D /* SpotifyTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15997A0E274EA34F00125B2D /* SpotifyTheme.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		159979DF274E571600125B2D /* SpotifUI-Lab.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SpotifUI-Lab.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		159979E2274E571600125B2D /* SpotifUI_LabApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifUI_LabApp.swift; sourceTree = "<group>"; };
-		159979E4274E571600125B2D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		159979E6274E571A00125B2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		159979E9274E571A00125B2D /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		159979F5274E594900125B2D /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
+		159979F7274E5AEC00125B2D /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		159979F9274E5B0100125B2D /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
+		159979FB274E5B1800125B2D /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		159979FD274E5B3400125B2D /* PremiumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PremiumView.swift; sourceTree = "<group>"; };
+		159979FF274E8BC600125B2D /* CircularSpUIv3T-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularSpUIv3T-Light.ttf"; sourceTree = "<group>"; };
+		15997A00274E8BC600125B2D /* CircularSpUIv3T-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularSpUIv3T-Black.ttf"; sourceTree = "<group>"; };
+		15997A01274E8BC600125B2D /* CircularSpUIv3T-Book.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularSpUIv3T-Book.ttf"; sourceTree = "<group>"; };
+		15997A02274E8BC600125B2D /* CircularSpUIv3T-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "CircularSpUIv3T-Bold.ttf"; sourceTree = "<group>"; };
+		15997A08274E8C6000125B2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		15997A0B274E8F3100125B2D /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		15997A0E274EA34F00125B2D /* SpotifyTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpotifyTheme.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +72,11 @@
 		159979E1274E571600125B2D /* SpotifUI-Lab */ = {
 			isa = PBXGroup;
 			children = (
+				15997A08274E8C6000125B2D /* Info.plist */,
 				159979E2274E571600125B2D /* SpotifUI_LabApp.swift */,
-				159979E4274E571600125B2D /* ContentView.swift */,
-				159979E6274E571A00125B2D /* Assets.xcassets */,
+				15997A0D274E8F3E00125B2D /* Theme */,
+				15997A09274E8EA300125B2D /* Resources */,
+				159979F0274E585600125B2D /* Views */,
 				159979E8274E571A00125B2D /* Preview Content */,
 			);
 			path = "SpotifUI-Lab";
@@ -65,6 +88,79 @@
 				159979E9274E571A00125B2D /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		159979F0274E585600125B2D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				159979F1274E58CC00125B2D /* Home */,
+				159979F2274E58D800125B2D /* Search */,
+				159979F3274E58DF00125B2D /* Library */,
+				159979F4274E58E600125B2D /* Premium */,
+				159979F5274E594900125B2D /* TabBarView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		159979F1274E58CC00125B2D /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				159979F7274E5AEC00125B2D /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		159979F2274E58D800125B2D /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				159979F9274E5B0100125B2D /* SearchView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		159979F3274E58DF00125B2D /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				159979FB274E5B1800125B2D /* LibraryView.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		159979F4274E58E600125B2D /* Premium */ = {
+			isa = PBXGroup;
+			children = (
+				159979FD274E5B3400125B2D /* PremiumView.swift */,
+			);
+			path = Premium;
+			sourceTree = "<group>";
+		};
+		15997A07274E8BD200125B2D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				15997A00274E8BC600125B2D /* CircularSpUIv3T-Black.ttf */,
+				15997A02274E8BC600125B2D /* CircularSpUIv3T-Bold.ttf */,
+				15997A01274E8BC600125B2D /* CircularSpUIv3T-Book.ttf */,
+				159979FF274E8BC600125B2D /* CircularSpUIv3T-Light.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		15997A09274E8EA300125B2D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				159979E6274E571A00125B2D /* Assets.xcassets */,
+				15997A07274E8BD200125B2D /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		15997A0D274E8F3E00125B2D /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				15997A0B274E8F3100125B2D /* Fonts.swift */,
+				15997A0E274EA34F00125B2D /* SpotifyTheme.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +222,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				159979EA274E571A00125B2D /* Preview Assets.xcassets in Resources */,
+				15997A06274E8BC700125B2D /* CircularSpUIv3T-Bold.ttf in Resources */,
+				15997A05274E8BC700125B2D /* CircularSpUIv3T-Book.ttf in Resources */,
 				159979E7274E571A00125B2D /* Assets.xcassets in Resources */,
+				15997A04274E8BC700125B2D /* CircularSpUIv3T-Black.ttf in Resources */,
+				15997A03274E8BC700125B2D /* CircularSpUIv3T-Light.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +237,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				159979E5274E571600125B2D /* ContentView.swift in Sources */,
+				15997A0C274E8F3100125B2D /* Fonts.swift in Sources */,
+				159979FA274E5B0100125B2D /* SearchView.swift in Sources */,
+				159979F8274E5AEC00125B2D /* HomeView.swift in Sources */,
+				159979FE274E5B3400125B2D /* PremiumView.swift in Sources */,
+				159979F6274E594900125B2D /* TabBarView.swift in Sources */,
+				159979FC274E5B1800125B2D /* LibraryView.swift in Sources */,
+				15997A0F274EA34F00125B2D /* SpotifyTheme.swift in Sources */,
 				159979E3274E571600125B2D /* SpotifUI_LabApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -272,9 +378,11 @@
 				DEVELOPMENT_TEAM = N99G5ZJN8Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SpotifUI-Lab/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -301,9 +409,11 @@
 				DEVELOPMENT_TEAM = N99G5ZJN8Y;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "SpotifUI-Lab/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

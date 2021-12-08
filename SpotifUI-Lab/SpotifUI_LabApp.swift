@@ -9,9 +9,14 @@ import SwiftUI
 
 @main
 struct SpotifUI_LabApp: App {
+    
+    init() {
+        SpotifyTheme.shared.setupTheme()
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TabBarView()
         }
     }
 }
