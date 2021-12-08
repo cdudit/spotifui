@@ -29,17 +29,17 @@ extension UIImage {
 }
 
 let favoritesGenres: [FavoriteGenre] = [
-    FavoriteGenre(libelle: "Variété française", picturePath: "popcorn"),
+    FavoriteGenre(libelle: "Variété française", picturePath: "ennaboost"),
     FavoriteGenre(libelle: "Hip-Hop", picturePath: "jefe"),
-    FavoriteGenre(libelle: "Pop", picturePath: "likes"),
-    FavoriteGenre(libelle: "Dance/Electro", picturePath: "ennaboost")
+    FavoriteGenre(libelle: "Dance/Electro", picturePath: "likes"),
+    FavoriteGenre(libelle: "Radio", picturePath: "kobaladradio")
 ]
 
 let browseAll: [FavoriteGenre] = [
-    FavoriteGenre(libelle: "Rétrospective", picturePath: "popcorn"),
-    FavoriteGenre(libelle: "Classements", picturePath: "jefe"),
-    FavoriteGenre(libelle: "Podcasts", picturePath: "likes"),
-    FavoriteGenre(libelle: "Nouveautés", picturePath: "ennaboost")
+    FavoriteGenre(libelle: "Sport", picturePath: "beastmode"),
+    FavoriteGenre(libelle: "Classements", picturePath: "topsongs"),
+    FavoriteGenre(libelle: "Podcasts", picturePath: "popcorn"),
+    FavoriteGenre(libelle: "Nouveautés", picturePath: "discoverweekly")
 ]
 
 struct SearchView: View {
